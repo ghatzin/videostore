@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header"/>
+
+<body>
+<div th:replace="common/header :: navbar"/>
+
+<div class="container">
+    <div class="row" style="margin-bottom: -45px;">
+        <div class="col-xs-8">
+            <h2 class="section-headline">
+                <h2 class="section-headline">
+                    <span th:text="${user}? ${#strings.toUpperCase(user.username)} : 'Messages'"></span>
+                </h2>
+            </h2>
+        </div>
+        <div class="col-xs-4">
+            <a th:href="@{/}"><img src="/image/logo2.jpg" class="img-responsive"/></a>
+        </div>
+    </div>
+    <hr
+            style="position: absolute; width: 80%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;"/>
+    <img class="img-responsive" src="/image/cinemarow.jpg"
+         style="margin-top: -75px;"/>
+
+	<br></br>
+
+<form class="form-horizontal" th:action="@{/newMessage}" method="post">
+	<div class="row">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="description">Message</label>
+				<div class="col-md-8">
+					<textarea name="userMessage" rows="5" class="form-control"
+								id="userMessage" th:value="message.userMessage"
+								placeholder="New message" ></textarea>
+						<span class="help-block">Type your message above</span>
+				</div>
+		</div>
+	</div>	
+	<button type="submit" class="btn btn-success">Send</button>
+							<a class="btn btn-danger" th:href="@{/}">Cancel</a>
+	</form>
+	
+	
+</div>
+<!-- end of container -->
+
+
+<div th:replace="common/header :: footer" />
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+</body>
+</html>

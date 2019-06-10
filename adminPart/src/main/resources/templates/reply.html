@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header"/>
+
+<body>
+<div th:replace="common/header :: navbar"/>
+
+<div class="container">
+    <div class="row" style="margin-bottom: -100px;">
+        <div class="col-xs-8">
+            
+
+<form class="form-horizontal" th:action="@{/reply}" method="post">
+	<div class="row">
+	
+	<input hidden="hidden" name="id" th:value="${message.id}"/>
+	<input hidden="hidden" name="userMessage" th:value="${message.userMessage}"/>
+	<input hidden="hidden" name="userId" th:value="${user.id}"/>
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="adminReply">Reply</label>
+				<div class="col-md-8">
+					<textarea name="adminReply" rows="5" class="form-control"
+								id="adminReply" th:value="message.adminReply"
+								placeholder="Your reply" ></textarea>
+						<span class="help-block">Type your message above</span>
+				</div>
+		</div>
+	</div>	
+	<button type="submit" class="btn btn-success">Send</button>
+							<a class="btn btn-danger" th:href="@{/}">Cancel</a>
+	</form>
+	
+	
+</div>
+</div>
+<!-- end of container -->
+
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+</body>
+</html>

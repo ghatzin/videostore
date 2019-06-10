@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container"  style=background-color:tomato;>
+		<div class="row">
+			<!-- carousel -->
+			<br></br>
+			<div class="col-xs-7">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div id="carousel-example-generic" class="carousel slide"
+							data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0"
+									class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+					
+										<a th:href="@{/searchCategoryClick?keyword=Kids}"><img
+											src="/image/happyKid.jpg"
+											alt="..." class="img-responsive"/></a>
+									
+									<div class="carousel-caption">
+										<h1 style="color:tomato; font-family:'Comic Sans MS';">I'm here because I'm happy!</h1>
+										
+									</div>
+								</div>
+								<div class="item">
+									<a th:href="@{/searchCategoryClick?keyword=Romance}"><img
+										src="/image/500days.jpg"
+										alt="..." class="img-responsive" width="2200px"/></a>
+									<div class="carousel-caption">
+										<h2 style="font-family:'Comic Sans MS';">Because I want to have a good time...</h2>
+										
+									</div>
+								</div>
+								<div class="item">
+									<a th:href="@{/searchCategoryClick?keyword=Oscar}"><img
+										src="/image/gagaCooper.jpg"
+										alt="..."  class="img-responsive"/></a>
+									<div class="carousel-caption">
+										<h1 style="color:#ffff80; font-family:'Comic Sans MS';">Because I want to win the Oscar!</h1>
+										
+									</div>
+								</div>
+								...
+							</div>
+
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-example-generic"
+								role="button" data-slide="prev"> <span
+								class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a> <a class="right carousel-control"
+								href="#carousel-example-generic" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"
+								aria-hidden="true"></span> <span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-5">
+			<br></br>
+			<div class="col-xs-2"> </div>
+			<div class="col-xs-3">
+				<img src="/image/logo3.png" height="280px"/>
+			</div>
+			</div>
+		</div>
+
+		<br></br>
+		
+		<div>
+			<div class="home-headline">
+				<span>TOP UPCOMING MOVIES</span>
+			</div>
+			<hr style="margin-top: -15px;" />
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img src="/image/GOT.jpg" class="img-responsive" />
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img src="/image/dark-phoenix.jpg" style="max-height: 50%;" class="img-responsive" />
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img src="/image/skywalker.jpg" class="img-responsive" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br></br>
+
+		<div>
+			<div class="home-headline">
+				<span>BEST SELLERS</span>
+			</div>
+			<hr style="margin-top: -15px;" />
+		</div>
+
+
+		<div class="row">
+			<div id="featured-books" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#featured-books" data-slide-to="0" class="active"></li>
+					<li data-target="#featured-books" data-slide-to="1"></li>
+					<li data-target="#featured-books" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="bottom-movies">
+				
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="/image/cornhor.jpg" class="img-responsive" />
+						<div class="carousel-caption">
+						
+							<div class="row">
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${8}"><img class="img-responsive" src="/image/American_Psycho.png" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${9}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX651_CR0,0,651,999_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${10}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${11}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${12}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BMTkxNTk1ODcxNl5BMl5BanBnXkFtZTcwMDI1OTMzOQ@@._V1_SY1000_SX666_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${13}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,686,1000_AL_.jpg" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img src="/image/cornhor.jpg" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${14}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SY999_CR0,0,673,999_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${16}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BMjIyZGU4YzUtNDkzYi00ZDRhLTljYzctYTMxMDQ4M2E0Y2YxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX667_CR0,0,667,999_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${17}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${18}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BN2U1YzdhYWMtZWUzMi00OWI1LWFkM2ItNWVjM2YxMGQ2MmNhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${19}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BZjZlZDlkYTktMmU1My00ZDBiLWFlNjEtYTBhNjVhOTM4ZjJjXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${20}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img src="/image/cornhor.jpg" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${21}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BNDc4MThhN2EtZjMzNC00ZDJmLThiZTgtNThlY2UxZWMzNjdkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX640_CR0,0,640,999_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${22}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY999_SX666_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${3}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${23}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${24}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SY1000_CR0,0,674,1000_AL_.jpg" /></a>
+								</div>
+								<div class="col-xs-2">
+									<a th:href="@{/movieDetails?id=}+${25}"><img class="img-responsive" src="https://m.media-amazon.com/images/M/MV5BMjJmYTNkNmItYjYyZC00MGUxLWJhNWMtZDY4Nzc1MDAwMzU5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,676,1000_AL_.jpg" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>             
+
+				</div>
+				
+				<!-- Controls -->
+				<a class="left carousel-control" href="##featured-books"
+					role="button" data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="##featured-books"
+					role="button" data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- end of container -->
+
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

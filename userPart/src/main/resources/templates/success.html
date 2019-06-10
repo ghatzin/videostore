@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container" th:style="'background: url(/image/whitepop.jpg) no-repeat center center fixed;'">
+	<div class="row" style="margin-left: 150px;">
+		<div class="col-xs-10">
+		
+			<h2 class="section-headline">
+        		<span th:text="${user}? ${#strings.toUpperCase(user.username)} : 'USER'"></span>
+       	     </h2>
+       	 
+       	     <br></br>
+			
+	
+		<p><h1 style="color:black; font-family:'Comic Sans MS';"><strong>SUCCESS!!!</strong></h1>
+	 	 <div class="col-xs-5" style="color:black;">
+    					<h2><strong>Movie Title: </strong><span th:text="${movie.title}"></span></h2>
+    					<h3><strong>Total: </strong><span th:text="${purchase.total}"></span> &#8364;</h3>
+    					<h3><strong>Purchase Date: </strong><span th:text="${purchase.purchaseDate}"></span></h3>
+    					<h2><strong style="font-family:'Comic Sans MS';">The Download of the movie will begin in a moment... Enjoy!</strong></h2>
+    					<br></br>
+    					<h2><strong><a th:href="@{/}">Back to Home Page</a></strong></h2>
+    					<br></br>
+    					
+    	</div>
+		
+
+	</div>
+	</div>
+	</div>
+	
+	
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

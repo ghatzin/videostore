@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+	
+	
+	<div class="container">				
+						<div class="panel-group">
+							<div class="panel panel-default" style="border: none;">
+								<div class="panel-body"
+									style="background-color: #ededed; margin-top: 20px;">
+
+									<div data-th-each="message : ${messageList}">	
+										
+    																			
+        								<div class="chat-container">
+    										<img class="img-responsive" src="/image/userAvatar.png">
+    										<p><strong>User: </strong></p>
+    										</br>
+        							    	<p th:text="${message.userMessage}"></p>
+        							    	</br>
+        							    	<a th:href="@{/reply(id=${message.id})}"><span>Reply</span></a>
+        								</div>		
+        									  	
+        										
+     									<div class="chat-dark-container">
+    										<img class="img-responsive" src="/image/adminAvatar.png">
+    										<p style="color:red;"><strong>Admin: </strong></p>
+    										</br>
+        									<p th:text="${message.adminReply}"></p>
+        								</div>		
+        									      								
+        						
+        								
+        							</div>	
+									
+								</div>
+							</div>
+						</div>
+				
+    					<a th:href="@{/}" type="submit" 
+    					class="btn btn-danger" style="color:black;border:1px solid black; padding: 10px 40px 10px 40px;">Go back</a> 
+				</div>
+
+</body>
+</html>

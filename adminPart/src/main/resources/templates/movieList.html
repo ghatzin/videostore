@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+	
+	<div class="container">
+		<div class="table-responsive">
+			<table id="movieListTable" class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Director</th>
+						<th>Studio</th>
+						<th>Genre</th>
+						<th>Price</th>
+						<th>Active</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-th-each="movie : ${movieList}">
+						
+						<td><a th:href="@{/movie/movieInfo(id=${movie.id})}"><span th:text="${movie.title}"></span></a></td>
+						<td th:text="${movie.director}"></td>
+						<td th:text="${movie.studio}"></td>
+						<td th:text="${movie.genre}"></td>
+						<td th:text="${movie.price}"></td>
+						<td th:text="${movie.active}"></td>
+						<td>						   
+						    <a th:href="@{/movie/deleteMovie(id=${movie.id})}" class="btn btn-danger btn-xs delete-movie" type="submit" value="delete">DELETE</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	
+	</div>
+	
+	
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

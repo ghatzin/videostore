@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -45px;">
+			<div class="col-xs-8">
+				<h2 class="section-headline">
+					<h2 class="section-headline">
+						<span
+							th:text="${user}? ${#strings.toUpperCase(user.username)} : 'Movie'"></span>
+					</h2>
+				</h2>
+			</div>
+			<div class="col-xs-4">
+				<a th:href="@{/}"><img src="/image/logo2.jpg" class="img-responsive" /></a>
+			</div>
+		</div>
+		<hr style="position: absolute; width:85%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;" />
+		<img class="img-responsive" src="/image/cinemarow.jpg"
+			style="margin-top: -75px; border-radius: 8px;" />
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-xs-12">
+				<div class="row">
+					
+					<br />
+					<div th:if="${inactiveMovie}" class="alert alert-warning">
+						This movie is unavailable at the moment! Please chose another one.</div>
+
+					<br /> <br />
+					<div class="row">
+						<div class="col-xs-10 ">
+							<h4 style="margin-left:0px;">Selected movie</h4>
+						</div>
+						<div class="col-xs-2">
+							<h4>Price</h4>
+						</div>
+					<!--  	<div class="col-xs-2">
+							<h4>Qty</h4>
+						</div> -->
+					</div>
+
+
+					<div class="row">
+						<form>
+							<hr />
+							<div class="col-xs-10">
+								<img style="width:100px;" class="img-responsive shelf-book left-block"
+									th:src="#{adminPath}+@{/image/movie/}+${movie.id}+'.png'" />
+
+							</div>
+						
+
+							<div class="col-xs-2">
+								<h5 style="color: #db3208; font-size: large;">
+									&#8364;<span th:text="${movie.price}"></span>
+								</h5>
+							</div>
+
+						<!--	<div class="col-xs-2">
+								<input hidden="hidden" name="id" th:value="${cartItem.id}" /> <input
+									th:id="${cartItem.id}" th:name="qty" th:disabled="${cartItem.book.inStockNumber==0}" class="form-control cartItemQty" th:value="${cartItem.qty}" />
+								<button style="display: none;"
+									th:id="'update-item-'+${cartItem.id}" type="submit"
+									class="btn btn-warning btn-xs">Update</button> 
+							</div>  -->
+						</form>
+					</div>
+					
+					<hr/>
+					
+		
+				
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Credit Card Information -->
+											<div class="container">
+									
+											<div class="form-group">
+												<h4>Credit Card Information</h4>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<img src="/image/creditcard.png" class="img-responsive" /><br />
+													<div class="form-group">
+														<label for="cardType">* Select Card Type:</label>
+														<select class="form-controll" id="cardType" th:name="type" >
+															<option value="visa">Visa</option>
+															<option value="mastercard">Mastercard</option>
+															<option value="discover">Discover</option>
+															<option value="amex">American Express</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<label for="cardHolder">* Card Holder Name:</label>
+														<input type="text" class="form-control" id="cardHolder" required="required"
+														placeHolder = "Card Holder Name" th:name="holderName" />
+													</div>
+													<div class="form-group">
+														<label for="cardNumber">* Card Number:</label>
+														<div class="input-group">
+															<input type="tel" class="form-control" id="cardNumber" required="required"
+														placeHolder = "Valid Card Number" th:name="cardNumber"/>
+														<span class="input-group-addon"><i class="fa fa-credit-card" aria-hidden="true"></i></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="row">
+												<div class="col-xs-7">
+													<div class="form-group">
+														<label>* Expiration Date</label>
+														<div class="row">
+															<div class="col-xs-6">
+																<select class="form-control" name="expiryMonth" required="required"
+																>
+																	<option disabled="disabled">-- Month --</option>
+																	<option value="01">Jan (01)</option>
+                                                                	<option value="02">Feb (02)</option>
+                                                                	<option value="03">Mar (03)</option>
+                                                                	<option value="04">Apr (04)</option>
+                                                               	 	<option value="05">May (05)</option>
+                                                               	 	<option value="06">June (06)</option>
+                                                                	<option value="07">July (07)</option>
+                                                                	<option value="08">Aug (08)</option>
+                                                                	<option value="09">Sep (09)</option>
+                                                                	<option value="10">Oct (10)</option>
+                                                                	<option value="11">Nov (11)</option>
+                                                                	<option value="12">Dec (12)</option>
+																</select>
+															</div>
+															<div class="col-xs-6">
+																<select class="form-control" name="expiryYear">
+																<option disabled="disabled">-- Year --</option>
+																<option value="19">2019</option>
+                                                                <option value="20">2020</option>
+                                                                <option value="21">2021</option>
+                                                                <option value="22">2022</option>
+                                                                <option value="23">2023</option>
+                                                                <option value="23">2024</option>
+                                                                <option value="23">2025</option>
+                                                                <option value="23">2026</option>
+                                                                <option value="23">2027</option>
+                                                                <option value="23">2028</option>
+                                                                <option value="23">2029</option>
+                                                                </select>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-5">
+													<div class="form-group">
+														<label for="cardCVC">CV Code</label>
+														<input id="cardCVC" type="tel" class="form-control" name="cvc" 
+														placeholder="CVC" th:name="cvc" />
+													</div>
+												</div>
+											</div>
+											<hr/>
+											
+											<div class="row">
+					<div class="col-xs-6 text-left">
+						<a class="btn btn-danger" th:href="@{/movieBox}">Cancel</a>
+					</div>
+					<div class="col-xs-6 text-right">
+						<a class="btn btn-primary" th:href="@{/completeOrder(id=${movie.id})}"
+							>Check Out</a>
+					</div>
+					</div>
+					</div>
+										
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

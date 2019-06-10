@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row">
+			<form class="form-horizontal" th:action="@{/movie/add}" method="post"
+				enctype="multipart/form-data">
+				<fieldset>
+					<legend class="center-block">
+						New movie Information
+					</legend>
+
+
+					<!-- title -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="title">Title</label>
+
+						<div class="col-md-8">
+							<input type="text" name="title" class="form-control" id="title"
+								th:value="${movie.title}" required="required" placeholder="Title" />
+							<span class="help-block">Title of the movie</span>
+						</div>
+					</div>
+
+					<!-- director -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="director">
+							Director</label>
+						<div class="col-md-8">
+							<input type="text" name="director" class="form-control" id="director"
+								th:value="${movie.director}" required="required"
+								placeholder="Director" /> <span class="help-block">Director
+								of the movie</span>
+						</div>
+					</div>
+
+					<!-- studio -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="publisher">Studio</label>
+						<div class="col-md-8">
+							<input type="text" name="studio" class="form-control"
+								id="studio" th:value="${movie.studio}"
+								placeholder="Studio" /> <span class="help-block">Studio
+								of the movie</span>
+						</div>
+					</div>
+
+					<!-- genre -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="genre">genre</label>
+						<div class="col-md-8">
+							<input type="text" class="form-control" id="genre"
+								name="genre" th:value="${movie.genre}"
+								placeholder="Genre" /> <span class="help-block">Genre</span>
+						</div>
+					</div>
+
+					<!-- language -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="language">Language</label>
+						<div class="col-md-8">
+							<select th:value="${movie.language}" id="language" name="language"
+								class="form-control">
+								<option value="english">English</option>
+								<option value="spanish">Spanish</option>
+								<option value="spanish">Greek</option>
+								<option value="spanish">French</option>
+							</select>
+						</div>
+					</div>
+
+					<!-- duration -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="duration">Duration</label>
+
+						<div class="col-md-8">
+							<input type="text" name="duration" class="form-control"
+								id="duration" th:value="${movie.duration}"
+								placeholder="Duration" /> <span class="help-block">Duration
+								of the movie</span>
+						</div>
+					</div>
+					
+
+					<!-- price -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="price">Price</label>
+						<div class="col-md-8">
+							<div class="input-group">
+								<span class="input-group-addon">&#8364;</span> <input
+									th:value="${movie.price}" type="number" name="price" step="0.01"
+									class="form-control" id="price" placeholder="price" />
+							</div>
+							<span class="help-block">Price of the movie</span>
+						</div>
+					</div>
+
+					<!-- status of movie -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="status">Status</label>
+						<div class="col-md-8">
+							<label><input value="true" type="radio" name="active"
+								checked="checked" />Active</label> <label><input
+								value="false" type="radio" name="active" />
+								Inactive </label> <span class="help-block">Whether the movie is
+								active or inactive</span>
+						</div>
+					</div>
+
+					<!-- description -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="description">Description</label>
+						<div class="col-md-8">
+							<textarea name="description" rows="5" class="form-control"
+								id="description" th:value="${movie.description}"
+								placeholder="Description" ></textarea>
+							<span class="help-block">Description of the movie</span>
+						</div>
+					</div>
+
+					<!-- upload image -->
+					<div class="form-group">
+						<div class="col-md-2">
+							<label for="movieImage">Upload movie image</label>
+						</div>
+						<div class="col-md-8">
+							<input id="movieImage" type="file" name="movieImage"
+								th:value="${movie.movieImage}" />
+						</div>
+					</div> 
+
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<button type="submit" class="btn btn-success">Add movie</button>
+							<a class="btn btn-danger" th:href="@{/}">Cancel</a>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>
